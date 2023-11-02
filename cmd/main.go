@@ -12,7 +12,7 @@ import (
 func main() {
 	sc, _ := stan.Connect("test-cluster", "script", stan.NatsURL("nats://localhost:4223"))
 
-	for i := 1; ; i++ {
+	for i := 1; i < 14; i++ {
 		order := myrandom.RandomOrder()
 		sbOrder, err := json.Marshal(order)
 		if err != nil {
@@ -24,4 +24,5 @@ func main() {
 		time.Sleep(30 * time.Second)
 	}
 
+	sc.Close()
 }
