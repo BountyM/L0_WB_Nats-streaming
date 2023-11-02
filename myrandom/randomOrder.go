@@ -39,7 +39,7 @@ func RandomOrder() models.Order {
 	order.Payment.Goods_total = rand.Intn(634)
 	order.Payment.Custom_fee = rand.Intn(144)
 	// items
-	items := make([]models.Item, 1)
+	items := make([]models.Item, 0)
 	ni := rand.Intn(2) + 1
 	for i := 0; i < ni; i++ {
 		var item models.Item
