@@ -14,12 +14,12 @@ func main() {
 
 	for i := 1; ; i++ {
 		order := myrandom.RandomOrder()
-		sbUser, err := json.Marshal(order)
+		sbOrder, err := json.Marshal(order)
 		if err != nil {
 			logrus.Infof("err %s", err)
 		}
 
-		sc.Publish("foo", sbUser)
+		sc.Publish("foo", sbOrder)
 
 		time.Sleep(30 * time.Second)
 	}
