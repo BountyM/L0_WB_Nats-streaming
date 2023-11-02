@@ -54,6 +54,7 @@ func RandomOrder() models.Order {
 		item.Nm_id = rand.Intn(1000000)
 		item.Brand = RandStringRunes(14)
 		item.Status = rand.Intn(500)
+		items = append(items, item)
 	}
 	order.Items = items
 	return order

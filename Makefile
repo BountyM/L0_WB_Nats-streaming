@@ -1,6 +1,6 @@
 .PHONY: all
 
 build:
-	sudo docker network create nats-net
+	sudo docker run -p 4223:4223 -p 8223:8223 nats-streaming -p 4223 -m 8223
 
-	sudo docker-compose -f nats&nats-streaming.yaml up -d
+	go run cmd/main.go
