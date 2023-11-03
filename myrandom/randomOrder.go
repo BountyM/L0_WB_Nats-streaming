@@ -20,6 +20,7 @@ func RandomOrder() models.Order {
 	order.Date_created = RandStringRunes(20)
 	order.Oof_shard = RandStringRunes(1)
 	// delivery
+	order.Delivery.Order_uid = order.Order_uid
 	order.Delivery.Name = RandStringRunes(11)
 	order.Delivery.Phone = RandStringRunes(11)
 	order.Delivery.Zip = RandStringRunes(7)

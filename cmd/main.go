@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"math/rand"
 	"time"
 
 	"github.com/BountyM/L0_WB_Nats-streaming/myrandom"
@@ -10,6 +11,7 @@ import (
 )
 
 func main() {
+	rand.Seed(45)
 	sc, _ := stan.Connect("test-cluster", "script", stan.NatsURL("nats://localhost:4223"))
 
 	for i := 1; i < 14; i++ {
